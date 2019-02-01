@@ -214,7 +214,7 @@ class MapViewPlugin(val activity: Activity) : MethodCallHandler {
                 hideToolbar = if (mapOptions != null) mapOptions["hideToolbar"] as Boolean else false
                 mapTitle = if (mapOptions != null) mapOptions["title"] as String else ""
 
-                if (mapOptions["mapViewType"] != null) {
+                if (mapOptions != null && mapOptions["mapViewType"] != null) {
                     val mappedMapType: Int? = mapTypeMapping.get(mapOptions["mapViewType"]);
                     if (mappedMapType != null) mapViewType = mappedMapType;
                 }
